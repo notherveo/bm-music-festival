@@ -29,7 +29,7 @@ export function Marquee({
           reverse && "animate-marquee-reverse"
         )}
       >
-        {[...children, ...children].map((child, i) => (
+        {[...React.Children.toArray(children), ...React.Children.toArray(children)].map((child, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 20 }}
